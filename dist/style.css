@@ -376,17 +376,17 @@ bottom: 0;
 }
 
 #whatsapp-button img {
-  width: 100px; /* Ajusta el tamaño del ícono según tus preferencias */
+  width: 100px;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #whatsapp-button:hover {
-  transform: scale(1.2); /* Cambia el tamaño al 110% al pasar el mouse */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el mouse */
+  transform: scale(1.2); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 #whatsapp-button:hover img {
-  transform: rotate(360deg); /* Puedes agregar una rotación al pasar el mouse */
+  transform: rotate(360deg); 
 }
 

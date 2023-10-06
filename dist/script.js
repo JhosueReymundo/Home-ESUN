@@ -252,7 +252,7 @@ const waitForImages = () => {
 	});
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+/* document.addEventListener("DOMContentLoaded", function() {
     const whatsappButton = document.getElementById("whatsapp-button");
 
     window.addEventListener("scroll", function() {
@@ -262,6 +262,6 @@ document.addEventListener("DOMContentLoaded", function() {
             whatsappButton.style.opacity = "0";
         }
     });
-});
+}); */
 
 waitForImages();
