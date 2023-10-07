@@ -20,6 +20,7 @@ body {
   align-items: center;
   background: rgba(0, 0, 0, 0.787);
   overflow-x: hidden;
+  overflow-y: hidden;
   
 }
 
@@ -194,7 +195,7 @@ button:focus {
   --card-translateX-offset: calc(var(--card-width) * 1.1);
   --card-rotation-offset: -25deg;
 }
-.card.previous--card, .card.next--card {
+.card.previous--card, .card.next--card{
   --card-scale-offset: 0.9;
   --opacity: 0.1;
 }
@@ -355,38 +356,91 @@ button:focus {
 /* pie de pagina */
 
 .modif {
-  position: absolute; 
+ position: absolute; 
 /*  height: 10%; */
-bottom: 0;
+ bottom: 0;
  width: 100%;
  background-color: #333; 
  color: #fff; 
  padding: 10px; 
  text-align: center; 
- 
- 
 }
 
-#whatsapp-button {
-  position: fixed;
-  bottom: 150px;
-  right: 20px;
-  z-index: 1000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* iconos */
+
+
+.icon1 {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+  border-radius: 50%;
+  transition: all .8s;
+  cursor: pointer;
 }
 
-#whatsapp-button img {
-  width: 100px;
-  height: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.icon1:hover {
+  background-color: #25d366;
+  box-shadow: 0 0 20px #25d366 ;
 }
 
-#whatsapp-button:hover {
-  transform: scale(1.2); 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+.icon1:hover:nth-child(2) {
+  background-color: #e60073;
+  box-shadow:  0 0 20px #e60073 ;
 }
 
-#whatsapp-button:hover img {
-  transform: rotate(360deg); 
+.icon1:hover:nth-child(3) {
+  background-color: #1877f2;
+  box-shadow:  0 0 20px #1877f2;
 }
 
+.icon1:hover:nth-child(4) {
+  background-color: #1da1f2;
+  box-shadow:  0 0 20px #1da1f2 ;
+}
+
+.icon1 i {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 1.7rem;
+}
+
+svg circle {
+  stroke-dasharray: 150;
+  transition: all .8s ease-in-out;
+}
+
+.icon1:hover circle {
+  stroke-dasharray: 220;
+}
+
+
+
+.icon {
+  position: relative;
+  border-radius: 50%;
+  transition: all .8s;
+  cursor: pointer;
+}
+.icon:hover {
+  background-color: #a6ecc0;
+  box-shadow: 0 0 20px #a6ecc0 ;
+}
+
+
+.icon:hover circle {
+  stroke-dasharray: 220;
+}
+
+/* -- */
+
+@media(max-width: 800px){
+  main { 
+    display: flex;
+    position: absolute;
+    bottom: 0;     
+  }
+}

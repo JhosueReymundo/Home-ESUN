@@ -23,6 +23,7 @@ body{
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
+    
 }
 
 .logo img{
@@ -35,17 +36,15 @@ body{
     padding: 10px;
 }
 
+
 .navigation ul{
     list-style: none;
     
 }
 
-
 .header .navigation ul li{
     float: left;
-    position: relative;
-   
-   
+    position: relative;  
 }
 
 .header .navigation ul li a{
@@ -54,16 +53,11 @@ body{
     text-decoration: none;
     padding: 20px;
     display: block;
-    transition: all .2s ease;
-    
-
-    
+    transition: all .2s ease;  
 }
 
 .header .navigation ul li a:hover{
-    background-color: #FEBE10;
-    
-    
+    background-color: #FEBE10;    
 }
 
 .header .navigation ul li ul{
@@ -95,15 +89,6 @@ body{
     display: inline;
 } 
      
-.header .navigation ul li ul li span{
-    float: right;
-    color: rgba(229, 217, 240, 0.986);
-    background-color: #c43348;
-    padding: 5px 10px;
-    font-size: 12px;
-    text-align: center;
-    border-radius: 5px;
-}
 
 #toggle,
 .header label{
@@ -115,7 +100,7 @@ img{
     height: 35px;
 }
     
-@media(max-width: 950px){
+@media(max-width: 1000px){
     .header label{
         display: initial;
     }

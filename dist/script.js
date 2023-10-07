@@ -264,4 +264,27 @@ const waitForImages = () => {
     });
 }); */
 
+const checkbox = document.querySelector("#toggle");
+const app = document.querySelector(".app");
+const main = document.querySelector("main");
+
+checkbox.addEventListener("click", function() {
+  app.style.transform = "translateY(200px)";
+  app.style.transition = "transform 0.5s ease-in-out";
+
+  main.style.transform = "translateY(200px)";
+  main.style.transition = "transform 0.5s ease-in-out";
+});
+
+checkbox.addEventListener("change", function() {
+	if (!checkbox.checked) {
+	  app.style.transform = "translateY(0)";
+	  app.style.transition = "transform 0.5s ease-in-out";
+
+	  main.style.transform = "translateY(0)";
+	  main.style.transition = "transform 0.5s ease-in-out";
+	}
+  });
+
+
 waitForImages();
