@@ -78,44 +78,44 @@ function changeInfo(direction) {
 
 	gsap.timeline()
 		.to([buttons.prev, buttons.next], {
-		duration: 0.2,
-		opacity: 0.5,
-		pointerEvents: "none",
-	})
+			duration: 0.2,
+			opacity: 0.5,
+			pointerEvents: "none",
+		})
 		.to(
-		currentInfoEl.querySelectorAll(".text"),
-		{
-			duration: 0.4,
-			stagger: 0.1,
-			translateY: "-120px",
-			opacity: 0,
-		},
-		"-="
-	)
+			currentInfoEl.querySelectorAll(".text"),
+			{
+				duration: 0.4,
+				stagger: 0.1,
+				translateY: "-120px",
+				opacity: 0,
+			},
+			"-="
+		)
 		.call(() => {
-		swapInfosClass(direction);
-	})
+			swapInfosClass(direction);
+		})
 		.call(() => initCardEvents())
 		.fromTo(
-		direction === "right"
-		? nextInfoEl.querySelectorAll(".text")
-		: previousInfoEl.querySelectorAll(".text"),
-		{
-			opacity: 0,
-			translateY: "40px",
-		},
-		{
-			duration: 0.4,
-			stagger: 0.1,
-			translateY: "0px",
-			opacity: 1,
-		}
-	)
+			direction === "right"
+				? nextInfoEl.querySelectorAll(".text")
+				: previousInfoEl.querySelectorAll(".text"),
+			{
+				opacity: 0,
+				translateY: "40px",
+			},
+			{
+				duration: 0.4,
+				stagger: 0.1,
+				translateY: "0px",
+				opacity: 1,
+			}
+		)
 		.to([buttons.prev, buttons.next], {
-		duration: 0.2,
-		opacity: 1,
-		pointerEvents: "all",
-	});
+			duration: 0.2,
+			opacity: 1,
+			pointerEvents: "all",
+		});
 
 	function swapInfosClass() {
 		currentInfoEl.classList.remove("current--info");
@@ -191,21 +191,21 @@ function init() {
 		"--card-translateY-offset": "0%",
 	})
 		.to(cardInfosContainerEl.querySelector(".current--info").querySelectorAll(".text"), {
-		delay: 0.5,
-		duration: 0.4,
-		stagger: 0.1,
-		opacity: 1,
-		translateY: 0,
-	})
-		.to(
-		[buttons.prev, buttons.next],
-		{
+			delay: 0.5,
 			duration: 0.4,
+			stagger: 0.1,
 			opacity: 1,
-			pointerEvents: "all",
-		},
-		"-=0.4"
-	);
+			translateY: 0,
+		})
+		.to(
+			[buttons.prev, buttons.next],
+			{
+				duration: 0.4,
+				opacity: 1,
+				pointerEvents: "all",
+			},
+			"-=0.4"
+		);
 }
 
 const waitForImages = () => {
@@ -241,10 +241,10 @@ const waitForImages = () => {
 				if (totalImages == loadedImages) {
 					gsap.timeline()
 						.to(".loading__wrapper", {
-						duration: 0.8,
-						opacity: 0,
-						pointerEvents: "none",
-					})
+							duration: 0.8,
+							opacity: 0,
+							pointerEvents: "none",
+						})
 						.call(() => init());
 				}
 			}
@@ -253,38 +253,38 @@ const waitForImages = () => {
 };
 
 /* document.addEventListener("DOMContentLoaded", function() {
-    const whatsappButton = document.getElementById("whatsapp-button");
+	const whatsappButton = document.getElementById("whatsapp-button");
 
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 100) {
-            whatsappButton.style.opacity = "1";
-        } else {
-            whatsappButton.style.opacity = "0";
-        }
-    });
+	window.addEventListener("scroll", function() {
+		if (window.scrollY > 100) {
+			whatsappButton.style.opacity = "1";
+		} else {
+			whatsappButton.style.opacity = "0";
+		}
+	});
 }); */
 
 const checkbox = document.querySelector("#toggle");
 const app = document.querySelector(".app");
 const main = document.querySelector("main");
 
-checkbox.addEventListener("click", function() {
-  app.style.transform = "translateY(200px)";
-  app.style.transition = "transform 0.5s ease-in-out";
+checkbox.addEventListener("click", function () {
+	app.style.transform = "translateY(200px)";
+	app.style.transition = "transform 0.5s ease-in-out";
 
-  main.style.transform = "translateY(200px)";
-  main.style.transition = "transform 0.5s ease-in-out";
+	main.style.transform = "translateY(200px)";
+	main.style.transition = "transform 0.5s ease-in-out";
 });
 
-checkbox.addEventListener("change", function() {
+checkbox.addEventListener("change", function () {
 	if (!checkbox.checked) {
-	  app.style.transform = "translateY(0)";
-	  app.style.transition = "transform 0.5s ease-in-out";
+		app.style.transform = "translateY(0)";
+		app.style.transition = "transform 0.5s ease-in-out";
 
-	  main.style.transform = "translateY(0)";
-	  main.style.transition = "transform 0.5s ease-in-out";
+		main.style.transform = "translateY(0)";
+		main.style.transition = "transform 0.5s ease-in-out";
 	}
-  });
+});
 
 
 waitForImages();
