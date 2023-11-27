@@ -19,10 +19,14 @@ function swapCards(direction) {
 	const currentCardEl = cardsContainerEl.querySelector(".current--card");
 	const previousCardEl = cardsContainerEl.querySelector(".previous--card");
 	const nextCardEl = cardsContainerEl.querySelector(".next--card");
+	const cuartoCardEl = cardsContainerEl.querySelector(".cuarto--card");
+	const quintoCardEl = cardsContainerEl.querySelector(".quinto--card");
 
 	const currentBgImageEl = appBgContainerEl.querySelector(".current--image");
 	const previousBgImageEl = appBgContainerEl.querySelector(".previous--image");
 	const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
+	const cuartoBgImageEl = appBgContainerEl.querySelector(".cuarto--image");
+	const quintoBgImageEl = appBgContainerEl.querySelector(".quinto--image");
 
 	changeInfo(direction);
 	swapCardsClass();
@@ -33,10 +37,14 @@ function swapCards(direction) {
 		currentCardEl.classList.remove("current--card");
 		previousCardEl.classList.remove("previous--card");
 		nextCardEl.classList.remove("next--card");
+		cuartoCardEl.classList.remove("cuarto--card");
+		quintoCardEl.classList.remove("quinto--card");
 
 		currentBgImageEl.classList.remove("current--image");
 		previousBgImageEl.classList.remove("previous--image");
 		nextBgImageEl.classList.remove("next--image");
+		cuartoBgImageEl.classList.remove("cuarto--image");
+		quintoBgImageEl.classList.remove("quinto--image");
 
 		currentCardEl.style.zIndex = "50";
 		currentBgImageEl.style.zIndex = "-2";
@@ -44,29 +52,57 @@ function swapCards(direction) {
 		if (direction === "right") {
 			previousCardEl.style.zIndex = "20";
 			nextCardEl.style.zIndex = "30";
+			cuartoCardEl.style.zIndex = "1";
+			quintoCardEl.style.zIndex = "1";
 
 			nextBgImageEl.style.zIndex = "-1";
 
-			currentCardEl.classList.add("previous--card");
+			/* currentCardEl.classList.add("previous--card");
 			previousCardEl.classList.add("next--card");
+			nextCardEl.classList.add("current--card"); */
+
+			currentCardEl.classList.add("previous--card");
+			previousCardEl.classList.add("quinto--card");
+			quintoCardEl.classList.add("cuarto--card");
+			cuartoCardEl.classList.add("next--card");
 			nextCardEl.classList.add("current--card");
+			
+			
+
+			/* currentBgImageEl.classList.add("previous--image");
+			previousBgImageEl.classList.add("next--image");
+			nextBgImageEl.classList.add("current--image"); */
 
 			currentBgImageEl.classList.add("previous--image");
-			previousBgImageEl.classList.add("next--image");
+			previousBgImageEl.classList.add("quinto--image");
+			quintoBgImageEl.classList.add("cuarto--image");
+			cuartoBgImageEl.classList.add("next--image");
 			nextBgImageEl.classList.add("current--image");
+
 		} else if (direction === "left") {
 			previousCardEl.style.zIndex = "30";
 			nextCardEl.style.zIndex = "20";
 
 			previousBgImageEl.style.zIndex = "-1";
 
+			
 			currentCardEl.classList.add("next--card");
+			nextCardEl.classList.add("cuarto--card");
+			cuartoCardEl.classList.add("quinto--card")
+			quintoCardEl.classList.add("previous--card")
 			previousCardEl.classList.add("current--card");
-			nextCardEl.classList.add("previous--card");
+			
+
+
+			/* currentBgImageEl.classList.add("next--image");
+			previousBgImageEl.classList.add("current--image");
+			nextBgImageEl.classList.add("previous--image"); */
 
 			currentBgImageEl.classList.add("next--image");
+			nextBgImageEl.classList.add("cuarto--image");
+			cuartoBgImageEl.classList.add("quinto--image")
+			quintoBgImageEl.classList.add("previous--image")
 			previousBgImageEl.classList.add("current--image");
-			nextBgImageEl.classList.add("previous--image");
 		}
 	}
 }
@@ -75,6 +111,8 @@ function changeInfo(direction) {
 	let currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
 	let previousInfoEl = cardInfosContainerEl.querySelector(".previous--info");
 	let nextInfoEl = cardInfosContainerEl.querySelector(".next--info");
+	let cuartoInfoEl=cardInfosContainerEl.querySelector(".cuarto--info");
+	let quintoInfoEl=cardInfosContainerEl.querySelector(".quinto--info");
 
 	gsap.timeline()
 		.to([buttons.prev, buttons.next], {
@@ -99,7 +137,7 @@ function changeInfo(direction) {
 		.fromTo(
 			direction === "right"
 				? nextInfoEl.querySelectorAll(".text")
-				: previousInfoEl.querySelectorAll(".text"),
+				: previousInfoEl.querySelectorAll(".text"), 
 			{
 				opacity: 0,
 				translateY: "40px",
@@ -111,6 +149,24 @@ function changeInfo(direction) {
 				opacity: 1,
 			}
 		)
+
+		.fromTo(
+			direction === "right"
+				? cuartoInfoEl.querySelectorAll(".text")
+				: quintoInfoEl.querySelectorAll(".text"), 
+			{
+				opacity: 0,
+				translateY: "40px",
+			},
+			{
+				duration: 0.4,
+				stagger: 0.1,
+				translateY: "0px",
+				opacity: 1,
+			}
+		)
+
+
 		.to([buttons.prev, buttons.next], {
 			duration: 0.2,
 			opacity: 1,
@@ -121,14 +177,30 @@ function changeInfo(direction) {
 		currentInfoEl.classList.remove("current--info");
 		previousInfoEl.classList.remove("previous--info");
 		nextInfoEl.classList.remove("next--info");
+		cuartoInfoEl.classList.remove("cuarto--info");
+		quintoInfoEl.classList.remove("quinto--info");
 
 		if (direction === "right") {
 			currentInfoEl.classList.add("previous--info");
+			previousInfoEl.classList.add("quinto--info");
+			quintoInfoEl.classList.add("cuarto--info");
+			cuartoInfoEl.classList.add("next--info");
 			nextInfoEl.classList.add("current--info");
-			previousInfoEl.classList.add("next--info");
+
+
+			/* currentInfoEl.classList.add("previous--info");
+			nextInfoEl.classList.add("current--info");
+			previousInfoEl.classList.add("next--info"); */
 		} else if (direction === "left") {
-			currentInfoEl.classList.add("next--info");
+
+			/* currentInfoEl.classList.add("next--info");
 			nextInfoEl.classList.add("previous--info");
+			previousInfoEl.classList.add("current--info"); */
+
+			currentInfoEl.classList.add("next--info");
+			nextInfoEl.classList.add("cuarto--info");
+			cuartoInfoEl.classList.add("quinto--info")
+			quintoInfoEl.classList.add("previous--info")
 			previousInfoEl.classList.add("current--info");
 		}
 	}

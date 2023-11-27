@@ -22,7 +22,7 @@ body {
   background: rgba(0, 0, 0, 0.787);
   overflow-x: hidden;
   overflow-y: hidden;
-
+/*   border: #0bca61 solid 2px; */
 }
 
 button {
@@ -36,6 +36,22 @@ button:focus {
   border: none;
 }
 
+.in {
+  display: flex;
+  align-items: center;
+}
+
+.h1-above-app {
+  color: #fff;
+  display: flex;
+  position: absolute;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  right: 31%;
+  top: 15%;
+  width: 40%;
+  z-index: 1;
+  justify-content: center;
+}
 .app {
   position: relative;
   width: 100%;
@@ -43,9 +59,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: #e00e0e solid 2px; */
-
-
+/*   border: #e00e0e solid 2px; */
 }
 
 .app__bg {
@@ -56,11 +70,7 @@ button:focus {
   filter: blur(3px);
   pointer-events: none;
   user-select: none;
-
-
   /* border: #280bca solid 2px; */
-
-
 }
 
 .app__bg::before {
@@ -83,10 +93,6 @@ button:focus {
   width: 130%;
   height: 100%;
   transition: transform 1000ms ease, opacity 1000ms ease;
-
-  /* border: #50e00e solid 10px; */
-
-
 }
 
 .app__bg__image img {
@@ -101,9 +107,10 @@ button:focus {
 }
 
 .app__bg__image.previous--image,
-.app__bg__image.next--image {
+.app__bg__image.next--image,
+.app__bg__image.cuarto--image,
+.app__bg__image.quinto--image{
   opacity: 0;
-
 }
 
 .app__bg__image.previous--image {
@@ -118,7 +125,6 @@ button:focus {
   position: absolute;
   width: calc(3.2 * var(--card-width));
   height: 20px;
-  /* border: #e00e0e solid 2px; */
 }
 
 
@@ -132,15 +138,14 @@ button:focus {
   /* transform: translateY(-50%); */
   transform: translateY(-10%);
   z-index: 100;
-  /* border: #280bca solid 2px; */
 }
 
 .cardList__btn.btn--left {
-  left: -5%;
+  left: -32%;
 }
 
 .cardList__btn.btn--right {
-  right: -5%;
+  right: -32%;
 }
 
 .cardList__btn .icon {
@@ -158,11 +163,10 @@ button:focus {
   width: 100%;
   height: 100%;
   perspective: 950px;
-  /* border: #00d123 solid 2px; */
 }
 
 .card {
-  --card-translateY-offset: 100vh;
+/*   --card-translateY-offset: 100vh; */
   position: absolute;
   left: 50%;
   top: 50%;
@@ -172,7 +176,6 @@ button:focus {
   height: var(--card-height);
   transition: transform var(--card-transition-duration) var(--card-transition-easing);
   user-select: none;
-  /* border: #00d123 solid 2px; */
 }
 
 .card::before {
@@ -220,6 +223,16 @@ button:focus {
   --card-translateX-offset: calc(var(--card-width) * 1.1);
   --card-rotation-offset: -25deg;
 }
+.card.cuarto--card {
+  --card-translateX-offset: calc(var(--card-width) * 1.9);
+  --card-rotation-offset: -50deg;
+}
+
+.card.quinto--card {
+  --card-translateX-offset: calc(-1 * var(--card-width) * 1.9);
+  --card-rotation-offset: 50deg;
+}
+
 
 .card.previous--card,
 .card.next--card {
@@ -227,12 +240,18 @@ button:focus {
   --opacity: 0.1;
 }
 
+.card.cuarto--card,
+.card.quinto--card{
+  --card-scale-offset: 0.7;
+  --opacity: 0.1;
+}
+
+
 .infoList {
   position: absolute;
   width: calc(3 * var(--card-width));
   height: var(--card-height);
   pointer-events: none;
-  /* border: #e00e0e solid 2px; */
 }
 
 .infoList .info__wrapper {
@@ -244,7 +263,6 @@ button:focus {
   align-items: flex-end;
   perspective: 1000px;
   transform-style: preserve-3d;
-  /* border: #000 solid 2px; */
 }
 
 .info {
@@ -267,8 +285,6 @@ button:focus {
   color: #FFFFFF;
   width: fit-content;
   height: 140px;
-
-
 }
 
 .info .name,
@@ -321,7 +337,9 @@ button:focus {
 }
 
 .info.previous--info,
-.info.next--info {
+.info.next--info,
+.info.cuarto--info,
+.info.quinto--info {
   opacity: 0;
   display: none;
 }
