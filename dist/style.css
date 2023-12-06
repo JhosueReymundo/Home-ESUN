@@ -264,6 +264,11 @@ button:focus {
   perspective: 1000px;
   transform-style: preserve-3d;
 }
+.cuarto--info .info .text {
+        
+        
+  color: black;
+      }
 
 .info {
   /* margin-bottom: calc(var(--card-height) / 10); */
@@ -282,9 +287,11 @@ button:focus {
   font-family: "Montserrat";
   font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
   white-space: wrap;
-  color: #FFFFFF;
-  width: fit-content;
-  height: 140px;
+  color: #ffffff;
+ 
+  background: rgba(43, 42, 42, 0.4);
+  width: 278px;
+  height: 135px;
 }
 
 .info .name,
@@ -298,7 +305,7 @@ button:focus {
 
 .info .location {
   --mg-left: 5 px;
-  --text-size-offset: 0.12;
+  --text-size-offset: 0.11;
   font-weight: 600;
   margin-left: var(--mg-left);
   margin-bottom: calc(var(--mg-left) / 2);
