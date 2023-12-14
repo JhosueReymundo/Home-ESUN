@@ -46,11 +46,13 @@ button:focus {
   display: flex;
   position: absolute;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  right: 31%;
+  right: 2%;
   top: 15%;
-  width: 40%;
+  width: 90%;
   z-index: 1;
   justify-content: center;
+
+  margin: 0 auto; /* Centrar el contenedor */
 }
 .app {
   position: relative;
@@ -290,8 +292,9 @@ button:focus {
   color: #ffffff;
  
   background: rgba(43, 42, 42, 0.4);
-  width: 278px;
-  height: 135px;
+  width: 257px;
+  height: 123px;
+  top: 10px;
 }
 
 .info .name,
@@ -392,10 +395,24 @@ button:focus {
 
 @media only screen and (min-width: 800px) {
   :root {
+    --card-width: 230px;
+    --card-height: 350px;
+  }
+  
+}
+
+@media only screen and (max-width: 800px) {
+
+  :root {
     --card-width: 250px;
     --card-height: 400px;
   }
+
+  .in{
+    display: none;
+  }
 }
+
 
 .support {
   position: absolute;
