@@ -292,9 +292,13 @@ button:focus {
   color: #ffffff;
  
   background: rgba(43, 42, 42, 0.4);
-  width: 257px;
-  height: 123px;
-  top: 10px;
+  width: 255px;
+  height: 113px;
+ 
+  
+}
+.info .location{
+  margin-top: 10px;
 }
 
 .info .name,
